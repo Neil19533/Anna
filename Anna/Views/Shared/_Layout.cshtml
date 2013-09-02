@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <br />
+        <form action="~/home/index" class="form-wrapper cf">
+            @if (!string.IsNullOrWhiteSpace(ViewBag.Query))
+            {
+            
+        <input name="q" type="text" value="@ViewBag.Query" required>
+            }
+            else
+            {    
+        <input name="q" type="text" placeholder="Search here..." required>
+            }
+        <button type="submit">Find</button>
+    </form>   
+
+       
+        @RenderBody()
+            
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - Anna</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

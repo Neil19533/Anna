@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<br />
+<br />
+
+
+@if(ViewBag.ErrorMessage!=null)
+{
+    <h1>Khannnnnnnnnnnnnnnnnnnn!!!!!!</h1>
+    <p>
+        @ViewBag.ErrorMessage
+    </p>
+}
+
+@if (ViewBag.Solutions != null)
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Word</th>
+                <th>Scrabble score</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        @foreach (Anna.Models.Word Solution in ViewBag.Solutions)
+        {
+            <tr>
+                <td>
+                    @Solution.Solution
+                </td>
+                <td>
+                    @Solution.Value
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+        
+}
